@@ -11,10 +11,9 @@ void _execute_instruct(FILE *file, stack_t **stack)
 	int len, a, found;
 
 	instruction_t set_op[] = { {"push", push}, {"pall", pall}, {"pop", pop},
-		{"pint", pint},
-		{"nop", nop},
-		{"swap", swap},
-		{"add", add},
+		{"pint", pint}, {"nop", nop}, {"swap", swap},
+		{"add", add}, {"sub", sub}, {"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
