@@ -17,11 +17,11 @@ int main(int ac, char *av[])
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	check_file_extension(filename);
+	/*check_file_extension(filename);*/
 	file_open = fopen(filename, "r");
 	if (!file_open)
 	{
-		fprintf(stderr, "Error: Can't open file %s", filename);
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 	stack = NULL;
