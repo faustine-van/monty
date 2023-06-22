@@ -20,7 +20,10 @@ void _execute_instruct(FILE *file, stack_t **stack)
 
 	line = malloc(LINE_CAPACITY * sizeof(char));
 	if (!line)
-		print_malloc_message("Error: malloc failed");
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 	while (fgets(line, LINE_CAPACITY, file))
 	{
 		line_number++;
@@ -41,7 +44,10 @@ void _execute_instruct(FILE *file, stack_t **stack)
 				}
 			}
 		if (!found && strlen(opco) != 0 && opco[0] != '#')
-			print_error(line_number, "unknown instruction %s", opco);
+		{
+			fprintf(stderr, "L%u: unknown instruction %s", line_number, opco);
+			exit(EXIT_FAILURE);
+		}
 		opco = strtok(NULL, DELIMITERS);
 		}
 	}

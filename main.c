@@ -21,7 +21,8 @@ int main(int ac, char *av[])
 	file_open = fopen(filename, "r");
 	if (!file_open)
 	{
-		print_malloc_message("Error: Can't open file %s", filename);
+		fprintf(stderr, "Error: Can't open file %s", filename);
+		exit(EXIT_FAILURE);
 	}
 	stack = NULL;
 	_execute_instruct(file_open, &stack);
