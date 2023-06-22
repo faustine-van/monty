@@ -28,5 +28,5 @@ int main(int ac, char *av[])
 	_execute_instruct(file_open, &stack);
 
 	fclose(file_open);
-	return (EXIT_SUCCESS);
+	return (0);
 }

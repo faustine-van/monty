@@ -21,7 +21,7 @@ void _execute_instruct(FILE *file, stack_t **stack)
 	line = malloc(LINE_CAPACITY * sizeof(char));
 	if (!line)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
 	while (fgets(line, LINE_CAPACITY, file))
