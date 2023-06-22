@@ -78,10 +78,7 @@ void pall(stack_t **top, unsigned int line_number)
 void pint(stack_t **top, unsigned int line_number)
 {
 	if (*top == NULL)
-	{
-		fprintf(stderr, "L%u: can't pint, stack empty", line_number);
-		exit(EXIT_FAILURE);
-	}
+		print_error(line_number, "can't pint, stack empty");
 	else
 		printf("%d\n", (*top)->n);
 }
